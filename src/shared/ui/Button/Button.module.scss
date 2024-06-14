@@ -1,0 +1,37 @@
+.container {
+    width: fit-content;
+    padding: 14px 14px;
+    max-height: 56px;
+
+    @media (hover: hover) {
+        &:hover {
+            cursor: pointer;
+            &:not(.accent) {
+                color: var(--background-color);
+                background-color: var(--accent-color);
+            }
+        }
+    }
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+.normal {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.accent {
+    color: var(--background-color);
+    background-color: var(--accent-color);
+}
+
+.reverseIconVerticalDirection {
+    transform: translateY(10%) rotate(-180deg);
+}

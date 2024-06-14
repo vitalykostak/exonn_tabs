@@ -1,0 +1,72 @@
+$defaultBorderColor: rgba(174, 182, 206, 0.2);
+
+.wrapper {
+    background-color: var(--background-color);
+    position: relative;
+}
+
+.container {
+    min-height: 56px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    align-items: center;
+    color: var(--inverted-background-color);
+    padding: 17px 20px 16px 20px;
+    border-top: 1px solid $defaultBorderColor;
+    border-bottom: 1px solid $defaultBorderColor;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: var(--light-background-color);
+            color: var(--text-color);
+            cursor: pointer;
+        }
+    }
+
+    &:not(.selected) {
+        &:not(:hover) {
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 1px;
+                height: 16px;
+                background-color: $defaultBorderColor;
+                right: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}
+
+.selected {
+    padding-top: 16px;
+    background-color: var(--light-background-color);
+    color: var(--text-color);
+    border-top: 2px solid var(--accent-color);
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+}
+
+.openedContextMenu {
+    background-color: rgba(244, 247, 249, 1);
+    color: var(--text-color);
+}
+
+.title {
+    margin-left: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.contextMenuContainer {
+    position: fixed;
+    transform: translate(0, 2%);
+}
+
+.dn {
+    display: none;
+}
